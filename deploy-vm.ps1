@@ -27,10 +27,10 @@ param(
     [String] $Folder="Discovered virtual machine",
     [String] $CustomNotes="Created by PowerCLI",
 	[String] $NetworkName="<virtual_network>",
-    [Switch] $Destroy,
     [String] $ClusterName="<cluster_name>",
     [String] $DatastoreName="<datastore_name>",
 	[Array] $Hosts='vm-powercli',
+    [Switch] $Destroy,
 	[DateTime] $Date
 )
 
