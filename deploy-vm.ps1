@@ -6,7 +6,7 @@
     .DESCRIPTION
     Deploy virtual machine(s) from existing OVA templates found in the Content Library
     .PARAMETER Environment
-    Specify target VCServer
+    Specify target VCenter
     .INPUTS
     None.
     .OUTPUTS
