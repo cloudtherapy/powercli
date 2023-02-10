@@ -2,8 +2,6 @@
 version: 0.2
 
 env:
-  variables:
-    VCENTER_PLATFORM: hci
   parameter-store:
     VCENTER_PASSWORD: /CodeBuild/VCENTER_PASSWORD
 phases:
@@ -20,7 +18,6 @@ phases:
       - pwd
       - ls -lR
       - pwsh
-        -File build-vmware-amazon2.ps1
-            -VCenter $VCENTER_PLATFORM
+        -File build.ps1
             -UpdateSeedIso
             -Release
