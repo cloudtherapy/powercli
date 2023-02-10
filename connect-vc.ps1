@@ -6,7 +6,7 @@
     .DESCRIPTION
     Connect or disconnect to/from vCenter server
     .PARAMETER Environment
-    Specify target VCenter environment: hci, norwood
+    Specify target VCenter environment
     .INPUTS
     None.
     .OUTPUTS
@@ -21,7 +21,7 @@
 param(
     [Switch] $Disconnect,
     [String] $VCServer,
-    [String] $VC_User="administrator@vsphere.local"
+    [String] $VCAdminUser="administrator@vsphere.local"
 )
 
 # Ignore SSL warning for VCenter connection
@@ -40,7 +40,7 @@ if ($Disconnect) {
 # Connect to VCenter 
 if ($env:vcenter_pass) {
 	Write-Output "Connected to VCenter ${VCServer}"
-	Connect-VIServer $VCServer -User $VC_User -Password $env:vcenter_pass | Out-Null
+	Connect-VIServer $VCServer -User $VCAdminUser -Password $env:VCENTER_PASSWORD | Out-Null
 } else {
 	Write-Output "ERROR: Please set environment variable vcenter_pass"
 	exit 1
